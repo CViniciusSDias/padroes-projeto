@@ -33,4 +33,3 @@ foreach ($listaOrcamentos as $orcamento) {
 
     echo PHP_EOL;
 }
-

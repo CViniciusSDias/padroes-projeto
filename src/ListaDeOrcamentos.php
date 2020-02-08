@@ -2,7 +2,7 @@
 
 namespace Alura\DesignPattern;
 
-class ListaDeOrcamentos
+class ListaDeOrcamentos implements \IteratorAggregate
 {
     /** @var Orcamento[] */
     private array $orcamentos;
@@ -15,5 +15,10 @@ class ListaDeOrcamentos
     public function addOrcamento(Orcamento $orcamento)
     {
         $this->orcamentos[] = $orcamento;
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->orcamentos);
     }
 }
