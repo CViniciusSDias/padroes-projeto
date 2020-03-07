@@ -14,4 +14,21 @@ $item2->valor = 500;
 $orcamento->addItem($item1);
 $orcamento->addItem($item2);
 
+$orcamentoAntigo = new Orcamento();
+$item3 = new ItemOrcamento();
+$item3->valor = 150;
+$orcamentoAntigo->addItem($item3);
+
+$orcamentoMaisAntigoAinda = new Orcamento();
+$item4 = new ItemOrcamento();
+$item4->valor = 50;
+$item5 = new ItemOrcamento();
+$item5->valor = 100;
+$orcamentoMaisAntigoAinda->addItem($item4);
+$orcamentoMaisAntigoAinda->addItem($item5);
+
+$orcamentoAntigo->addItem($orcamentoMaisAntigoAinda);
+
+$orcamento->addItem($orcamentoAntigo);
+
 echo $orcamento->valor();
