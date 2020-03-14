@@ -1,6 +1,8 @@
 <?php
 
-namespace Alura\DesignPattern;
+namespace Alura\DesignPattern\Pedido;
+
+use Alura\DesignPattern\Orcamento;
 
 class Pedido
 {
