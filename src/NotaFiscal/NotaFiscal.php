@@ -24,16 +24,8 @@ class NotaFiscal
         );
     }
 
-    public function clonar(): NotaFiscal
+    public function __clone()
     {
-        $cloneNotaFiscal = new NotaFiscal();
-        $cloneNotaFiscal->cnpjEmpresa = $this->cnpjEmpresa;
-        $cloneNotaFiscal->razaoSocialEmpresa = $this->razaoSocialEmpresa;
-        $cloneNotaFiscal->itens = $this->itens;
-        $cloneNotaFiscal->observacoes = $this->observacoes;
-        $cloneNotaFiscal->dataEmissao = $this->dataEmissao;
-        $cloneNotaFiscal->valorImpostos = $this->valorImpostos;
-
-        return $cloneNotaFiscal;
+        $this->dataEmissao = new \DateTimeImmutable();
     }
 }
