@@ -13,7 +13,7 @@ class FileLogWritter implements LogWritter
 
     public function escreve(string $mensagemFormatada): void
     {
-        fwrite($this->arquivo, $mensagemFormatada);
+        fwrite($this->arquivo, $mensagemFormatada . PHP_EOL);
     }
 
     public function __destruct()

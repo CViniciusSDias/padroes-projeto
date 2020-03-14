@@ -14,5 +14,5 @@ abstract class LogManager
         $logWritter->escreve($mensagemFormatada);
     }
 
-    abstract function criarLogWritter(): LogWritter;
+    abstract public function criarLogWritter(): LogWritter;
 }
