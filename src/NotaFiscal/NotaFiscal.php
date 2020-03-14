@@ -2,6 +2,8 @@
 
 namespace Alura\DesignPattern\NotaFiscal;
 
+use Alura\DesignPattern\ItemOrcamento;
+
 class NotaFiscal
 {
     public string $cnpjEmpresa;
@@ -13,6 +15,12 @@ class NotaFiscal
 
     public function valor(): float
     {
-        return 0;
+        return array_reduce(
+            $this->itens,
+            function (float $valorAcumulado, ItemOrcamento $itemAtual) {
+                return $valorAcumulado + $itemAtual->valor;
+            },
+            0
+        );
     }
 }
