@@ -9,6 +9,7 @@ class Orcamento implements Orcavel
 {
     private array $itens;
     public EstadoOrcamento $estadoAtual;
+    public float $valor;
 
     public function __construct()
     {
@@ -43,10 +44,12 @@ class Orcamento implements Orcavel
 
     public function valor(): float
     {
-        return array_reduce(
+        $this->valor = array_reduce(
             $this->itens,
             fn (float $valorAcumulado, Orcavel $item) => $item->valor() + $valorAcumulado,
             0
         );
+
+        return $this->valor;
     }
 }
