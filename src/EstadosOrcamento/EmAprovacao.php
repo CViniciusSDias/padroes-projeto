@@ -8,7 +8,7 @@ class EmAprovacao extends EstadoOrcamento
 {
     public function calculaDescontoExtra(Orcamento $orcamento): float
     {
-        return $orcamento->valor * 0.05;
+        return $orcamento->valor() * 0.05;
     }
 
     public function aprova(Orcamento $orcamento)

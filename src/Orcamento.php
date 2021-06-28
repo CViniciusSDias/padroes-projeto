@@ -18,7 +18,7 @@ class Orcamento implements Orcavel
 
     public function aplicaDescontoExtra()
     {
-        $this->valor -= $this->estadoAtual->calculaDescontoExtra($this);
+        return $this->estadoAtual->calculaDescontoExtra($this);
     }
 
     public function aprova()
